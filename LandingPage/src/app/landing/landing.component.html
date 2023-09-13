@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link  type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+<body>
+    <header>
+
+      <div class="logo">
+        <img src="{{LogoImages}}" alt="logo" />
+      </div>
+
+      <nav>
+        <ul class="menu" [ngClass]="{'active': isMenuActive}">
+          <li><a href="#"><span class="Icons"><img src="{{AsistenciaImage}}" ></span>Asistencia</a></li>
+          <li><a href="#"><span class="Icons"><img src="{{CorreoImage}}" ></span> Contactenos</a></li>
+        </ul>
+
+        <i class="fa-solid fa-bars" id="toggle" (click)="toggleMenu()"></i>
+      </nav>
+
+    </header>
+
+    <form [formGroup]="formUser" class="formulario">
+      <input type="text" formControlName="placa">
+      <input type="email" formControlName="correo">
+      <input type="text" formControlName="nombre">
+      <input type="text" formControlName="apellido">
+      <input type="text" formControlName="telefono">
+      <button type="submit" (click)="onSubmit()">Registrarse</button>
+    </form>
+
+    <script>
+      const menu = document.querySelector('.menu');
+      const toggle = document.querySelector('#toggle');
+
+      toggle.onclick = function(){
+          console.log('clicked');
+          menu.classList.toggle('active');
+      };
+
+  </script>
+    <div class="background-image-container">
+      <img src="{{Back1Images}}" alt="Back1">
+    </div>
+
+    <div class="Back2">
+      <img src="{{Back2Images}}" alt="Back2">
+    </div>
+
+    <div class="video">
+      <p>Video Comming Soon</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Estilo para el header */
+header {
+  background-color: #004173;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para el logo en el header */
+.logo img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Estilo para la barra de navegación en el header */
+nav ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* Estilo para el elemento con el identificador #toggle */
+/* header nav #toggle {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+}*/
+
+header nav #toggle {
+  display: none;
+}
+
+
+nav ul.menu li {
+  background-color: #fff;
+  display: inline-block;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+nav ul.menu li a {
+  position: relative;
+  text-decoration: none;
+  color: #004173;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-right: 20px;
+}
+
+.menu .Icons{
+  display: inline-block;
+  vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+  margin-right: 5px; /* Espacio entre el icono y el texto (ajustable) */
+  margin-left: 15px; /* Espacio entre el icono y el texto (ajustable) */
+}
+
+nav ul.menu li a:hover {
+  color:#ffc107;
+}
+
+.background-image-container img {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto; /* Mantén la altura automática para que la imagen no cambie de tamaño */
+}
+
+
+
+/* Media query para pantallas con un ancho menor a 700px */
+@media (max-width: 700px) {
+  header {
+    /* Estilos específicos para pantallas más pequeñas */
+    padding: 5px 20px; /* Por ejemplo, ajusta el espaciado superior e inferior */
+  }
+
+  .menu {
+    flex-direction: column; /* Cambia la dirección del menú a columna */
+    align-items: center; /* Alinea los elementos del menú a la izquierda */
+    position: absolute; /* Permite que el menú desplegable se superponga al contenido */
+    top: 100%; /* Coloca el menú debajo del botón de hamburguesa */
+    right: 0; /* Alinea el menú a la derecha del contenedor */
+    left: 30;
+    background-color: #004173; /* Cambia el color de fondo del menú */
+    padding: 10px 20px; /* Añade espacio interno al menú */
+    max-height: 0; /* Inicialmente, el menú está oculto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .menu.active {
+    max-height: 1000px;  /* Muestra el menú desplegable cuando la clase "active" está presente */
+  }
+
+
+  .menu li {
+    margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
+    margin-bottom: 10px; /* Añade espacio entre elementos del menú en pantallas pequeñas */
+  }
+
+  .menu li a {
+    color: #fff; /* Cambia el color del texto en pantallas pequeñas */
+  }
+
+  nav ul.menu li {
+    margin-right: 5rem;
+    margin-left: 1rem;
+  }
+
+
+  header nav #toggle {
+    display: block;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+
+
+  .logo img {
+    /* Estilos específicos para el logo en pantallas más pequeñas */
+    max-width: 200px; /* Redefine el ancho máximo del logo */
+  }
+
+  nav ul.menu li {
+    /* Estilos específicos para los elementos del menú en pantallas más pequeñas */
+    margin-right: 10px; /* Por ejemplo, reduce el espacio entre los elementos del menú */
+  }
+
+  /* Puedes seguir agregando más estilos específicos para pantallas pequeñas aquí */
+}
