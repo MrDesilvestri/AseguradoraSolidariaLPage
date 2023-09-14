@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+LandingPage/node_modules/@babel/helper-plugin-utils/LICENSE
+LandingPage/node_modules/@babel/helper-wrap-function/LICENSE
+LandingPage/node_modules/@babel/plugin-proposal-private-property-in-object/LICENSE
+LandingPage/node_modules/@babel/plugin-syntax-async-generators/LICENSE
