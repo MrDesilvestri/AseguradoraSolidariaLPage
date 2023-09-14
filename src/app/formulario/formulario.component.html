@@ -1,18 +1,27 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<div id="text_form">
+    <h2>Formulario</h2>
+    <p>Formulario de registro de vehículos</p>
+</div>
+<form [formGroup]="formulario" class="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" formControlName="nombre" class="form-control">
+    <input type="text" formControlName="Placa" placeholder="Placa">
   </div>
-
+  <hr>
   <div class="form-group">
-    <label for="cedula">Cédula:</label>
-    <input type="text" id="cedula" formControlName="cedula" class="form-control">
+    <input type="email" formControlName="Correo" placeholder="Correo">
   </div>
-
+  <hr>
   <div class="form-group">
-    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-    <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" class="form-control">
+    <input type="text" formControlName="nombre" placeholder="Nombre">
   </div>
-
+  <hr>
+  <div class="form-group">
+    <input type="text" formControlName="apellido" placeholder="Apellido">
+  </div>
+  <hr>
+  <div class="form-group">
+    <input type="text" formControlName="telefono" placeholder="Teléfono">
+  </div>
+  <hr>
   <button type="submit" [disabled]="formulario.invalid" class="btn btn-primary">Enviar</button>
 </form>

@@ -5,8 +5,21 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
-
+.form-container {
+  position: absolute;
+  top: 45%;
+  right: 10rem;
+  transform: translateY(-50%); /* Centra verticalmente el contenedor */
+  padding: 20px;
+  background-color: white;
+  z-index: 999;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 350px;
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente uno sobre otro */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
 /* Estilo para el header */
 header {
   background-color: #004173;
@@ -70,9 +83,9 @@ nav ul.menu li a {
 
 .menu .Icons{
   display: inline-block;
-  vertical-align: middle; /* Alinea verticalmente el icono con el texto */
-  margin-right: 5px; /* Espacio entre el icono y el texto (ajustable) */
-  margin-left: 15px; /* Espacio entre el icono y el texto (ajustable) */
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-left: 15px;
 }
 
 nav ul.menu li a:hover {
@@ -85,28 +98,25 @@ nav ul.menu li a:hover {
   left: 0;
   right: 0;
   width: 100%;
-  height: auto; /* Mantén la altura automática para que la imagen no cambie de tamaño */
+  height: auto;
 }
 
-
-
-/* Media query para pantallas con un ancho menor a 700px */
 @media (max-width: 700px) {
   header {
-    /* Estilos específicos para pantallas más pequeñas */
-    padding: 5px 20px; /* Por ejemplo, ajusta el espaciado superior e inferior */
+
+    padding: 5px 20px;
   }
 
   .menu {
-    flex-direction: column; /* Cambia la dirección del menú a columna */
-    align-items: center; /* Alinea los elementos del menú a la izquierda */
-    position: absolute; /* Permite que el menú desplegable se superponga al contenido */
-    top: 100%; /* Coloca el menú debajo del botón de hamburguesa */
-    right: 0; /* Alinea el menú a la derecha del contenedor */
-    left: 30;
-    background-color: #004173; /* Cambia el color de fondo del menú */
-    padding: 10px 20px; /* Añade espacio interno al menú */
-    max-height: 0; /* Inicialmente, el menú está oculto */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 30px;
+    background-color: #004173;
+    padding: 10px 20px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
   }
@@ -122,7 +132,7 @@ nav ul.menu li a:hover {
   }
 
   .menu li a {
-    color: #fff; /* Cambia el color del texto en pantallas pequeñas */
+    color: #fff;
   }
 
   nav ul.menu li {
