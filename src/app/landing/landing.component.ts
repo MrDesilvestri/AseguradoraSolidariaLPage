@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl , Validators} from '@angular/forms';
 
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -19,28 +20,8 @@ export class LandingComponent implements OnInit{
   constructor() { }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      nombre: new FormControl(),
-      correo: new FormControl(),
-      contraseña: new FormControl()
-    });
   }
-
-  formUser = new FormGroup({
-      'placa' : new FormControl('', [Validators.required]),
-      'nombre': new FormControl('', [Validators.required]),
-      'apellido': new FormControl('', [Validators.required]),
-      'correo': new FormControl('', [Validators.required]),
-      'telefono' : new FormControl('', [Validators.required]),
-
-  });
-
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive; // Cambia el estado del menú (activo/inactivo)
   }
-
-  onSubmit() {
-    console.log(this.formUser.value);
-  }
-
 }

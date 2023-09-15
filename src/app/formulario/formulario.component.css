@@ -1,3 +1,4 @@
+
 .btn-primary {
   background-color: #007bff;
   width: 300px;
@@ -38,7 +39,7 @@
   height: auto;
   margin-right: auto;
   padding: 10px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: " roboto", sans-serif;
   border: 1px solid #ccc;
   border-radius: 5px;
 }

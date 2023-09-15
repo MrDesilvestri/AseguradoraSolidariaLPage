@@ -1,39 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import {NgxToastService} from "ngx-toast-notifier";
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  formulario: FormGroup;
+  form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.formulario = this.fb.group({
-      Placa: ['', [Validators.required], [this.validarPlacaFormatoAsync.bind(this)]],
-      Correo: ['', [Validators.required, Validators.email]],
-      nombre: ['', [Validators.required]],
-      apellido: ['', [Validators.required]],
-      telefono: ['', Validators.pattern('[0-9]{10}')],
+  constructor(private fb: FormBuilder, private ngxToastService: NgxToastService) {
+    this.form = this.fb.group({
     });
   }
 
   ngOnInit(): void {
-
+      this.form = this.fb.group({
+        name: ['', Validators.required],
+        last_name: ['', Validators.required],
+        placa: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)], this.validarPlacaFormatoAsync],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+    });
   }
-
   onSubmit() {
-    if (this.formulario.valid) {
-      console.log(this.formulario.value);
+    if (this.form.valid) {
+      console.log(this.form.value);
+      this.ngxToastService.onSuccess('This is a success alert','This is a success alert')
     } else {
-      this.markFormGroupTouched(this.formulario);
+      this.markFormGroupTouched(this.form);
     }
   }
   validarPlacaFormatoAsync(control: AbstractControl): Promise<any> | null {
     return new Promise((resolve) => {
       const placa = control.value;
-      const placaRegex = /^[A-Z]{3}\d{3}$/; // Ejemplo de formato AAA111
+      const placaRegex = /^[A-Z]{3}\d{3}$/;
 
       if (!placaRegex.test(placa)) {
         resolve({'placaInvalida': true});

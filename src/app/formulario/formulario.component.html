@@ -2,26 +2,26 @@
     <h2>Formulario</h2>
     <p>Formulario de registro de vehículos</p>
 </div>
-<form [formGroup]="formulario" class="formulario" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" class="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <input type="text" formControlName="Placa" placeholder="Placa">
+    <input type="text" formControlName="placa" placeholder="placa">
   </div>
   <hr>
   <div class="form-group">
-    <input type="email" formControlName="Correo" placeholder="Correo">
+    <input type="email" formControlName="email" placeholder="Correo">
   </div>
   <hr>
   <div class="form-group">
-    <input type="text" formControlName="nombre" placeholder="Nombre">
+    <input type="text" formControlName="name" placeholder="Nombre">
   </div>
   <hr>
   <div class="form-group">
-    <input type="text" formControlName="apellido" placeholder="Apellido">
+    <input type="text" formControlName="last_name" placeholder="Apellido">
   </div>
   <hr>
   <div class="form-group">
-    <input type="text" formControlName="telefono" placeholder="Teléfono">
+    <input type="text" formControlName="phone" placeholder="Teléfono">
   </div>
   <hr>
-  <button type="submit" [disabled]="formulario.invalid" class="btn btn-primary">Enviar</button>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enviar</button>
 </form>
