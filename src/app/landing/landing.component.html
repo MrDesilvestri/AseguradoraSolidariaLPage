@@ -1,51 +1,63 @@
 <html>
   <head>
-    <link  type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>LandingPage</title>
   </head>
-<body>
+  <body>
     <header>
       <div class="logo">
-        <img ngSrc="{{LogoImages}}" alt="logo" fill=""/>
+        <img ngSrc="{{ LogoImages }}" alt="logo" fill="" />
       </div>
 
+      <div class="form-container">
+        <app-formulario></app-formulario>
+      </div>
       <nav>
-        <ul class="menu" [ngClass]="{'active': isMenuActive}">
-          <li><a href="#"><span class="Icons"><img ngSrc="{{AsistenciaImage}}" alt="" fill=""></span>Asistencia</a></li>
-          <li><a href="#"><span class="Icons"><img ngSrc="{{CorreoImage}}" alt="" fill=""></span> Contactenos</a></li>
+        <ul class="menu" [ngClass]="{ active: isMenuActive }">
+          <li>
+            <a href="#"
+              ><span class="Icons"
+                ><img ngSrc="{{ AsistenciaImage }}" alt="" fill="" /></span
+              >Asistencia</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="Icons"
+                ><img ngSrc="{{ CorreoImage }}" alt="" fill=""
+              /></span>
+              Contactenos</a
+            >
+          </li>
         </ul>
         <i class="fa-solid fa-bars" id="toggle" (click)="toggleMenu()"></i>
       </nav>
-
     </header>
 
-    <div class="form-container">
-      <app-formulario></app-formulario>
-    </div>
-
-
     <script>
-      const menu = document.querySelector('.menu');
-      const toggle = document.querySelector('#toggle');
+      const menu = document.querySelector(".menu");
+      const toggle = document.querySelector("#toggle");
 
-      toggle.onclick = function(){
-          console.log('clicked');
-          menu.classList.toggle('active');
+      toggle.onclick = function () {
+        console.log("clicked");
+        menu.classList.toggle("active");
       };
-
-  </script>
+    </script>
     <div class="background-image-container">
-      <img src="{{Back1Images}}" alt="Back1">
+      <img ngSrc="{{ Back1Images }}" alt="Back1" fill="" />
     </div>
 
     <div class="Back2">
-      <img src="{{Back2Images}}" alt="Back2">
+      <img src="{{ Back2Images }}" alt="Back2" />
     </div>
 
     <div class="video">
       <p>Video Comming Soon</p>
     </div>
-    <div id="notification">
-    </div>
+    <div id="notification"></div>
   </body>
 </html>
