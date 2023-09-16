@@ -1,16 +1,4 @@
-<div id="text_form">
-    <h2>Formulario</h2>
-    <p>Formulario de registro de vehículos</p>
-</div>
-<form [formGroup]="form" class="formulario" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <input type="text" formControlName="placa" placeholder="placa">
-  </div>
-  <hr>
-  <div class="form-group">
-    <input type="email" formControlName="email" placeholder="Correo">
-  </div>
-  <hr>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <input type="text" formControlName="name" placeholder="Nombre">
   </div>
