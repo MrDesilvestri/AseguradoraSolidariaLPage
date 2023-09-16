@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {NgxToastService} from "ngx-toast-notifier";
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -9,7 +8,7 @@ import {NgxToastService} from "ngx-toast-notifier";
 export class FormularioComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private ngxToastService: NgxToastService) {
+  constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
     });
   }
@@ -26,7 +25,6 @@ export class FormularioComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
-      this.ngxToastService.onSuccess('This is a success alert','This is a success alert')
     } else {
       this.markFormGroupTouched(this.form);
     }

@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import {NgOptimizedImage} from "@angular/common";
-import {NgxToastNotifierModule} from "ngx-toast-notifier";
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import {NgxToastNotifierModule} from "ngx-toast-notifier";
   ],
   imports: [
     BrowserAnimationsModule,
-    NgxToastNotifierModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
